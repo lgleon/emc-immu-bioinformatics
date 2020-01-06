@@ -19,7 +19,7 @@ class Team(models.Model):
 
 
 
-class BlogStatus(models.Model):
+class JobStatus(models.Model):
     title = models.ForeignKey(Team, on_delete=models.CASCADE)
     created_at = models.DateTimeField()
     image = models.ImageField(upload_to='images')
