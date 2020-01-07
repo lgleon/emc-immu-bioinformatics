@@ -1,4 +1,5 @@
 from django.db import models
+from priority.models import Clients
 
 
 class Jobs(models.Model):
@@ -8,8 +9,7 @@ class Jobs(models.Model):
     """
     title = models.CharField(max_length=10)
     data_type = models.CharField(max_length=10)
-    #dpto = models.ForeignKey(Clients, on_delete=models.CASCADE)
-    department = models.CharField(max_length=5) # Link to priority Clients
+    department = models.ForeignKey(Clients, on_delete=models.CASCADE)
     status = models.CharField(max_length=10)
     is_priority = models.CharField(max_length=10)
 
