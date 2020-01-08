@@ -62,11 +62,13 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'requestform', 'templates'),
+            os.path.join(BASE_DIR, 'lab', 'templates'),
         ]
     },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': []
+        'DIRS': [
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

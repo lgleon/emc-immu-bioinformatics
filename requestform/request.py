@@ -9,6 +9,7 @@ class RequestJobs(ModelForm):
         fields = '__all__'
 
 
+
 class GeneralInfo(ModelForm):
     required_css_class = 'required'
     class Meta:
