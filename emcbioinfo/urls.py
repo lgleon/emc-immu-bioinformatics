@@ -18,6 +18,7 @@ from django.urls import include, path
 
 
 urlpatterns = [
+    #path('', include('')),
     #path('request/', request.request, name='request')
     path('users/', include('users.urls')),
     path('priority/', include('priority.urls')),

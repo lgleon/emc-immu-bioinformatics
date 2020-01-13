@@ -61,14 +61,14 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.jinja2.Jinja2',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'requestform', 'templates'),
-            os.path.join(BASE_DIR, 'lab', 'templates'),
+            os.path.join(BASE_DIR, 'requestform', 'templates', 'requestform'),
+            os.path.join(BASE_DIR, 'lab', 'templates', 'lab'),
+            os.path.join(BASE_DIR, 'users', 'templates', 'users'),
         ]
     },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-        ]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -134,7 +134,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+#STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+#STRIPE_SECRET = os.getenv('STRIPE_SECRET')
