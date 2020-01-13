@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Job Request {% endblock title %}
+{% block content %}
+
+
+<h1> Request Bioinformatic Job </h1>
+
+{% if submitted %}
+	<p class ="success">
+		Your Job Request has submitted, please fill out the further details.
+	</p>
+
+{% else %}
+	<form action="" method="post" novalidate>
+	<table>
+		{{ form }}
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type="submit" value="Submit"></td>
+		</tr>
+	</table>
+	<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+	</form>
+{% endif %}
+
+
+<a href="base.html" class="previous round">&#8249;</a>
+<a href=".general_info" class="next round">&#8250;</a>
+
+{% endblock content %}
