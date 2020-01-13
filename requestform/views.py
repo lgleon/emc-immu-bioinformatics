@@ -25,3 +25,31 @@ def job_request(request):
         if 'submitted' in request.GET:
             submitted = True
     return render(request, 'job_request.html', {'form': form, 'submitted' : submitted})
+
+
+def general_info(request):
+    submitted = False
+    if request.method == 'POST':
+        form = GeneralInfo(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/general_info/?submitted=True')
+    else:
+        form = GeneralInfo()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'general_info.html', {'form': form, 'submitted': submitted})
+
+
+def analysis_type(request):
+    submitted = False
+    if request.method == 'POST':
+        form = AnalysisType(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/analysis_type/?submitted=True')
+    else:
+        form = AnalysisType()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'analysis_type.html', {'form': form, 'submitted': submitted})
