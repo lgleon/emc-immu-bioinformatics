@@ -213,3 +213,5 @@ __pycahce__/
 
 
 # End of https://www.gitignore.io/api/django,pycharm
+
+env.py

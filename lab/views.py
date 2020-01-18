@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
 from .models import Team
-from .models import JobStatus
-
+from .forms import JobStatus
+from django.shortcuts import get_object_or_404
 
 
 def index(request):
@@ -19,10 +19,12 @@ def job_status(request):
     if request.method == 'POST':
         form = JobStatus(request.POST)
         if form.is_valid():
-            form.save()
+            cd = form.cleaned_data
+            # assert False
             return HttpResponseRedirect('/job_status/?submitted=True')
     else:
         form = JobStatus()
         if 'submitted' in request.GET:
             submitted = True
+
     return render(request, 'job_status.html', {'form': form, 'submitted' : submitted})

@@ -1,16 +1,33 @@
 from django.db import models
+from users.models import User
 
 
 class Clients(models.Model):
     """
-    Create models to know which department and PI has the priority and for what ( I need to define types od priority )
+    Create models for the user to register and became a client
+    for that a supervisor can pay for the analysis (one or several) and for proprity (high, mid, low, none)
+    Always wiil be a supervisor (which can have several users/students) and department
+
     """
-    department = models.CharField(max_length=5)
-    project = models.TextField(max_length=200)
-    priority_status = models.CharField(max_length=5)
-    pi = models.CharField(max_length=20)
-    tag = models.CharField(max_length=20, null=True, blank=True)
+    HIGH = 'high'
+    MID = 'mid'
+    LOW = 'low'
+    NONE = 'none'
+    PRIORITY_CHOICES = [
+        (HIGH, 'high'),
+        (MID, 'mid'),
+        (LOW, 'low'),
+        (NONE, 'none'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    department = models.CharField('department which request a job',max_length=5)
+    supervisor = models.CharField('Pincipal Investigator', max_length=20)
+    project = models.CharField('name of the project where this job is included', max_length=30)
+    priority_status = models.CharField(max_length=5, choices=PRIORITY_CHOICES, default=NONE)
+
+
 
 
     def __str__(self):
-        return self.department
+        return "{1}-{2}".format(self.supervisor, self.department)
