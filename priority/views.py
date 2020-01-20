@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import Clients_data
@@ -7,6 +8,8 @@ from .models import Clients
 def index(request):
     return HttpResponse("Hello, world. I am in the priority part")
 
+
+@login_required
 def clients_data(request):
     submitted = False
     if request.method == 'POST':

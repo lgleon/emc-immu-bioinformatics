@@ -66,6 +66,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'lab', 'templates', 'lab'),
             os.path.join(BASE_DIR, 'users', 'templates', 'users'),
             os.path.join(BASE_DIR, 'priority', 'templates', 'priority'),
+            os.path.join(BASE_DIR, 'checkout', 'templates', 'checkout'),
         ]
     },
     {
@@ -142,6 +143,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+LOGIN_REDIRECT_URL = "/lab"
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+

@@ -17,7 +17,7 @@
 {% endif %}
 
 <form method="post" action="{% url 'users_login' %}">
-{% csrf_token %}
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 <table>
 <tr>
     <td>{{ form.username.label_tag }}</td>

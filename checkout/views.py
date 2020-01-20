@@ -11,6 +11,9 @@ from django.utils import timezone
 from priority.models import Clients
 
 
+""" aqui he cambiado Product por Priority que es lo que la gente esta comprando en el mi app, 
+quantity is refer to priority-level, more quantity more level"""
+
 def index(request):
     return HttpResponse("Hello, world. I am in the checkout")
 
@@ -28,15 +31,14 @@ def checkout(request):
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
-
             cart = request.session.get('cart', {})
             total = 0
             for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                priority = get_object_or_404(Clients, pk=id)
+                total += quantity * priority.price
                 order_line_item = OrderLineItem(
                     order=order,
-                    product=product,
+                    product=priority,
                     quantity=quantity
                 )
                 order_line_item.save()

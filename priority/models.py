@@ -30,4 +30,4 @@ class Clients(models.Model):
 
 
     def __str__(self):
-        return "{1}-{2}".format(self.supervisor, self.department)
+        return "{0}-{1}".format(self.supervisor, self.department)
