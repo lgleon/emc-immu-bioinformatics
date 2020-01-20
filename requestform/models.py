@@ -19,7 +19,7 @@ class Jobs(models.Model):
     research_question = models.CharField(max_length=200)
     sample_number = models.IntegerField()
     expectations = models.CharField('what do you expect to get form this analysis', max_length=200)
-    deadline = models.DateTimeField()
+    deadline = models.DateTimeField(blank=True)
 
     data_type = models.CharField('DNA, RNA, miRNAs, scRNA others', max_length=10)
     alignment = models.BooleanField(blank=False)

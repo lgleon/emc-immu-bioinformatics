@@ -5,10 +5,20 @@
 
 <h1> Clients </h1>
 
+
 {% if submitted %}
 	<p class ="success">
 		You create a new status entry for the job "Job title"
 	</p>
+	<form method="post" action="{% url 'add_to_cart' product.id %}">
+        {% csrf_token %}
+        <div class="input-group">
+            <input name="quantity" type="number" min="0" max="3" class="form-control" placeholder="Priority Level">
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="submit">Add</button>
+            </span>
+        </div>
+	</form>
 
 {% else %}
 	<form action="" method="post" novalidate>
@@ -19,7 +29,7 @@
 			<td><input type="submit" value="Submit"></td>
 		</tr>
 	</table>
-	<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+	{% csrf_token %}
 	</form>
 {% endif %}
 

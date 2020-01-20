@@ -19,7 +19,7 @@
 			<td><input type="submit" value="Submit"></td>
 		</tr>
 	</table>
-	<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+	{% csrf_token %}
 	</form>
 {% endif %}
 
