@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE = [
@@ -59,19 +60,14 @@ ROOT_URLCONF = 'emcbioinfo.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'requestform', 'templates', 'requestform'),
             os.path.join(BASE_DIR, 'lab', 'templates', 'lab'),
             os.path.join(BASE_DIR, 'users', 'templates', 'users'),
             os.path.join(BASE_DIR, 'priority', 'templates', 'priority'),
-            os.path.join(BASE_DIR, 'checkout', 'templates', 'checkout'),
-        ]
-    },
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+            os.path.join(BASE_DIR, 'checkout', 'templates', 'checkout'),]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
