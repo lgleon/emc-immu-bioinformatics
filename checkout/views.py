@@ -65,6 +65,10 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
+        clients = Clients.objects.all()
+        for client in clients:
+            print(client.project)
+            print(client.supervisor)
 
     return render(request, "checkout.html",
                   {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
