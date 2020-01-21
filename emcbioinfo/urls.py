@@ -20,6 +20,7 @@ from django.urls import include, path
 urlpatterns = [
     #path('', include('')),
     #path('request/', request.request, name='request')
+    path('cart/', include('cart.urls')),
     path('users/', include('users.urls')),
     path('priority/', include('priority.urls')),
     path('checkout/', include('checkout.urls')),

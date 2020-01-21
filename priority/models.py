@@ -9,24 +9,10 @@ class Clients(models.Model):
     Always wiil be a supervisor (which can have several users/students) and department
 
     """
-    HIGH = 'high'
-    MID = 'mid'
-    LOW = 'low'
-    NONE = 'none'
-    PRIORITY_CHOICES = [
-        (HIGH, 'high'),
-        (MID, 'mid'),
-        (LOW, 'low'),
-        (NONE, 'none'),
-    ]
-
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    department = models.CharField('department which request a job',max_length=5)
+    department = models.CharField('department which request a job',max_length=30)
     supervisor = models.CharField('Pincipal Investigator', max_length=20)
-    project = models.CharField('name of the project where this job is included', max_length=30)
-    priority_status = models.CharField(max_length=5, choices=PRIORITY_CHOICES, default=NONE)
-
-
+    project = models.CharField('name of the project where this job is included', max_length=100)
 
 
     def __str__(self):

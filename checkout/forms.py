@@ -1,5 +1,6 @@
 from django import forms
 from priority.models import Clients
+from requestform.models import Jobs
 
 
 class MakePaymentForm(forms.Form):
@@ -19,6 +20,5 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Clients
         fields = (
-            'supervisor', 'department', 'project',
-            'priority_status',
+            'supervisor', 'department', 'project'
         )

@@ -8,7 +8,7 @@ from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem
 from django.conf import settings
 from django.utils import timezone
-from priority.models import Clients
+from requestform.models import Jobs
 
 
 """ aqui he cambiado Product por Priority que es lo que la gente esta comprando en el mi app, 
@@ -21,7 +21,7 @@ def index(request):
 stripe.api_key = settings.STRIPE_SECRET
 
 
-@login_required()
+@login_required(login_url='/users/login')
 def checkout(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST)
@@ -34,7 +34,7 @@ def checkout(request):
             cart = request.session.get('cart', {})
             total = 0
             for id, quantity in cart.items():
-                priority = get_object_or_404(Clients, pk=id)
+                priority = get_object_or_404(Jobs, pk=id)
                 total += quantity * priority.price
                 order_line_item = OrderLineItem(
                     order=order,
@@ -65,10 +65,10 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
-        clients = Clients.objects.all()
-        for client in clients:
-            print(client.project)
-            print(client.supervisor)
+        jobs = Jobs.objects.all()
+        for job in jobs:
+            print(job.job_name)
+            print(job.priority_status)
 
     return render(request, "checkout.html",
                   {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})

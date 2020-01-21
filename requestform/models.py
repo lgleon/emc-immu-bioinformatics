@@ -7,19 +7,29 @@ class Jobs(models.Model):
     """
     Here we are going to create a model for any Job request, which include a first part for who is
     requesting teh job7analysis, second part some details about the data and a third part to create
-    models for gadering more information regarding the type of analysis and research project
+    models for gathering more information regarding the type of analysis and research project
 
     """
+    HIGH = 'high'
+    MID = 'mid'
+    LOW = 'low'
+    NONE = 'none'
+    PRIORITY_CHOICES = [
+        (HIGH, 'high'),
+        (MID, 'mid'),
+        (LOW, 'low'),
+        (NONE, 'none'),
+    ]
 
-    job_name = models.CharField('title for the request job', max_length=30)
+    job_name = models.CharField('title for the request job', max_length=50)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
-    is_priority = models.ForeignKey(Clients, on_delete=models.CASCADE)
+    priority_status = models.CharField(max_length=5, choices=PRIORITY_CHOICES, default=NONE)
 
     subject = models.CharField('short summary of the project subject', max_length=200)
     research_question = models.CharField(max_length=200)
     sample_number = models.IntegerField()
     expectations = models.CharField('what do you expect to get form this analysis', max_length=200)
-    deadline = models.DateTimeField(blank=True)
+    deadline = models.DateField(blank=True, null=True)
 
     data_type = models.CharField('DNA, RNA, miRNAs, scRNA others', max_length=10)
     alignment = models.BooleanField(blank=False)
@@ -30,5 +40,7 @@ class Jobs(models.Model):
     detailed_summary = models.TextField(blank=False)
     other_info = models.TextField(blank=True)
 
+    is_payed = models.BooleanField(default=False, editable=False)
+
     def __str__(self):
-        return "{0}-{1}-{2}-{3}".format(self.job_name, self.usuario, self.project, self.supervisor)
+        return "{0}-{1}-{2}-{3}".format(self.job_name, self.usuario,  self.subject, self.priority_status)

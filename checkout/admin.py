@@ -19,4 +19,5 @@ class JobsAdmin(admin.ModelAdmin):
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Clients)
 admin.site.register(Jobs)
+admin.site.register(OrderLineItem)
 

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cart.apps.CartConfig',
     'users.apps.UsersConfig',
     'requestform.apps.RequestformConfig',
     'checkout.apps.CheckoutConfig',
@@ -67,7 +68,9 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'lab', 'templates', 'lab'),
             os.path.join(BASE_DIR, 'users', 'templates', 'users'),
             os.path.join(BASE_DIR, 'priority', 'templates', 'priority'),
-            os.path.join(BASE_DIR, 'checkout', 'templates', 'checkout'),]
+            os.path.join(BASE_DIR, 'checkout', 'templates', 'checkout'),
+            os.path.join(BASE_DIR, 'cart', 'templates', 'cart'),
+            ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

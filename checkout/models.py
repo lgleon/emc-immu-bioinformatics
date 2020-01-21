@@ -1,5 +1,6 @@
 from django.db import models
 from priority.models import Clients
+from requestform.models import Jobs
 
 # Create your models here.
 
@@ -10,8 +11,6 @@ class Order(models.Model):
     postcode = models.CharField(max_length=20, blank=True)
     town_or_city = models.CharField(max_length=40, blank=False)
     street_address1 = models.CharField(max_length=40, blank=False)
-    street_address2 = models.CharField(max_length=40, blank=False)
-    county = models.CharField(max_length=40, blank=False)
     date = models.DateField()
 
     def __str__(self):
@@ -21,12 +20,9 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     """ Quantity is refer to Priority-level and it is related like that: 0==none, 1==Low, 2==Mid and
     3==High"""
-
-
     order = models.ForeignKey(Order, on_delete=models.CASCADE, null=False)
-    title = models.ForeignKey(Clients, null=False, on_delete=models.CASCADE)
-    quantity = models.IntegerField(blank=False)
+    job = models.ForeignKey(Jobs, related_name='job', on_delete=models.DO_NOTHING, blank=False)
+
 
     def __str__(self):
-        return "{0} {1} @ {1}".format(
-            self.quantity, self.product.price)
+        return "{0}-{1}".format(self.job, self.job.price)
