@@ -41,7 +41,16 @@
       </div>
     </div>
   </nav>
-  <!-- Section: to put the lab logo and some text with links -->
+	<!-- templates/email.html
+	<h1>Contact Us</h1>
+	<form method="post">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+	    <div class="form-actions">
+	      <button type="submit">Send</button>
+	    </div>
+	</form>-->
+  <!-- Section: to put the lab logo and some text with links-->
   <section class="container-fluid row">
     <div class="col-lg-2"></div>
     <div class="content col-xs-12 col-lg-8">
@@ -53,13 +62,13 @@
           <input type="text" name="institution" class="form-control" id="institution" placeholder="Institution"
                  required/>
           <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary"
-                    placeholder="Project Description" required></textarea>
-          <button type="submit" class="btn btn-secondary center-block">Send Project Request</button>
+                    placeholder="Question" required></textarea>
+          <button type="submit" class="btn btn-secondary center-block">Send Question</button>
         </form>
       </div>
       <div class="col-lg-2"></div>
     </div>
-  </section>
+  </section>   <!--  -->
 </div>
 <footer class="container-fluid footer">
   <div class="row">
