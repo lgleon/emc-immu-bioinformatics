@@ -21,3 +21,4 @@ class Team(models.Model):
 
     def __str__(self):
         return "{0}-{1}-{2}-{3}".format(self.name, self.date, self.job_name, self.jobstatus_update)
+

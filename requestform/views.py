@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
 from .models import Jobs
@@ -12,7 +13,7 @@ def index(request):
 #    return render (request, 'test.html',
 #                   {'date': datetime.now(), 'login': current_user})
 
-
+@login_required(login_url='/users/login')
 def job_request(request):
     submitted = False
     if request.method == 'POST':

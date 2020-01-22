@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse("Hello, world. I am in the priority part")
 
 
-@login_required
+@login_required(login_url='/users/login')
 def clients_data(request):
     submitted = False
     if request.method == 'POST':

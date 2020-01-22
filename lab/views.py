@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
 from .models import Team
@@ -9,11 +10,8 @@ from django.shortcuts import get_object_or_404
 def index(request):
     return HttpResponse("Hello, world. I am in the lab lost with Alice in wonderland")
 
-#def testing(request):
-#    current_user = "Mable Marbles"
-#    return render(request, 'test.html', {'date': datetime.now(), 'login': current_user})
 
-
+@login_required(login_url='/users/login')  #change that as team members
 def job_status(request):
     submitted = False
     if request.method == 'POST':
