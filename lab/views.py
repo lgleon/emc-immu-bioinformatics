@@ -7,9 +7,12 @@ from .forms import JobStatus
 from django.shortcuts import get_object_or_404
 
 
-def index(request):
-    return HttpResponse("Hello, world. I am in the lab lost with Alice in wonderland")
+#def index(request):
+#return HttpResponse("Hello, world. I am in the lab lost with Alice in wonderland")
 
+
+def index(request):
+    return render(request, 'index.html')
 
 @login_required(login_url='/users/login')  #change that as team members
 def job_status(request):
@@ -26,3 +29,25 @@ def job_status(request):
             submitted = True
 
     return render(request, 'job_status.html', {'form': form, 'submitted' : submitted})
+
+
+
+
+
+"""  
+In the template:
+{% if user.is_staff %}
+    <p>Hello, Team.</p>
+{% else %}
+    <p>Hello, ordinary visitor.</p>
+{% endif %}
+
+
+
+In the view:
+if request.user.is_superuser:
+    # Hello, admin.
+else:
+    # Hello, ordinary visitor.
+
+"""

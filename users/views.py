@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, reverse
+from django.shortcuts import render, HttpResponse, reverse, HttpResponseRedirect
 #from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
