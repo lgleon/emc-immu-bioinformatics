@@ -14,21 +14,32 @@ from django.shortcuts import get_object_or_404
 def index(request):
     return render(request, 'index.html')
 
-@login_required(login_url='/users/login')  #change that as team members
+def work(request):
+    return render(request, 'work.html')
+
+def team(request):
+    return render(request, 'team.html')
+
+@login_required(login_url='/users/login')
 def job_status(request):
     submitted = False
-    if request.method == 'POST':
-        form = JobStatus(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            # assert False
-            return HttpResponseRedirect('/job_status/?submitted=True')
-    else:
-        form = JobStatus()
-        if 'submitted' in request.GET:
-            submitted = True
+    if request.user.is_staff:
 
-    return render(request, 'job_status.html', {'form': form, 'submitted' : submitted})
+        if request.method == 'POST':
+            form = JobStatus(request.POST)
+            if form.is_valid():
+                cd = form.cleaned_data
+                # assert False
+                return HttpResponseRedirect('/job_status/?submitted=True')
+        else:
+            form = JobStatus()
+            if 'submitted' in request.GET:
+                submitted = True
+
+        return render(request, 'job_status.html', {'form': form, 'submitted' : submitted})
+
+    else:
+        return render(request, 'index.html')
 
 
 

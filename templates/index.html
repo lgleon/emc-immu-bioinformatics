@@ -3,16 +3,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         type="text/css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
         type="text/css"/>
-  <link rel="stylesheet" href="style.css" type="text/css"/>
-  <meta name="viewport" content="width=device-width, initial-scale-1">
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="  favicon.ico"/>
+	<link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale-1">
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="favicon.ico"/>
 	{% block head_js %}
     {% endblock head_js %}
 </head>
@@ -36,41 +36,42 @@
         <div id="navbar" class="collapse navbar-collapse" aria-expanded="true" style="height: 1px;">
           <ul class="nav navbar-nav">
             <li class="#">
-              <a href="index.html" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
+              <a href="../lab" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
             </li>
             <li><a href="/requestform/job_request"> Request a Bioinformtics Job</a> </li>
 			<li><a href="/lab/job_status"> Create a job status</a></li>
 			<li><a href="/priority/clients_data"> Clients </a></li>
-            <li><a href="work.html" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>
-            <li><a href="team.html" data-toggle="collapse" data-target=".navbar-collapse.in">Team</a></li>
-            <!--<li><a href="#partnerlinks" data-toggle="collapse" data-target=".navbar-collapse.in">Partner Links</a></li>-->
-            <li><a href="contact.html" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
+            <li><a href="/lab/work" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>
+            <li><a href="/lab/team" data-toggle="collapse" data-target=".navbar-collapse.in">Team</a></li>
+            <li><a href="/contact/contact" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
+	  {% block content %}
 <!-- Section: to put the lab logo and some text with links -->
     <section class="container-fluid row">
       <div class="col-lg-2"></div>
       <div class="content col-xs-12 col-lg-8">
         <p>
           Bioinformatics Immunology is a
-          <a href="team.html">team</a>
+          <a href="labo/team.html">team</a>
           inside
           <a href="https://www6.erasmusmc.nl/immunologie/departm/intro.immu/?lang=en" target="_blank">Immunology
             department</a>
           to give support for any genomics anlysis.
         </p>
         <div class="nopadding">
-          <img src="media/image/Picture1Log.png" class="logo"/>
+	        <img src="{% static "lab/Picture1Log.png" %}" alt="Logo">
+
         </div>
         <div class="second-statement">
           <p> We collaborate in several
-            <a href="work.html">projects</a>
+            <a href="labo/work.html">projects</a>
             with other groups in the department.
             If you have genomic data and needs a hand.
             Please
-            <a href="contact.html">contact</a>
+            <a href="/contact/contact">contact</a>
             us and we could tall and work together.</p>
         </div>
         <div class="col-lg-2"></div>
@@ -78,20 +79,18 @@
     </section>
 	</div>
 </div>
-	{% block content %}{% endblock %}
+	{% endblock %}
   <footer class="container-fluid footer">
     <div class="row">
       <div class="col-xs-12">
         <h5 class="uppercase general-sub"></h5>
         <p class="inline-block footer-middle">
-          Erasmus MC - Immnunology Department, Bioinformatics team
+          Erasmus MC - Immnunology Department, Bioinformatics Team
           l.gonzalezleon@erasmusmc.nl
         </p>
         <div class="col-xs-12 col-">
           <h5 class="uppercase general-sub"></h5>
           <ul class="list-inline social-links">
-            <li><a target="_blank" href="https://www.facebook.com/CancerPharmacologyLab/"><i
-              class="fa fa-facebook"></i></a></li>
             <li><a target="_blank" href="https://www.linkedin.com/in/leticia-g-leon-74027b17"><i
               class="fa fa-linkedin"></i></a></li>
             <li><a target="_blank" href="https://www.youtube.com/channel/UC40O2dR9H0LVFTqWWbAwDDQ"><i

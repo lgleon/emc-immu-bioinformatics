@@ -1,5 +1,7 @@
+boto3==1.11.9
 Django==2.2.7
 django-forms-bootstrap==3.1.0
+django-storages==1.8
 gunicorn==19.9.0
 Jinja2==2.10.3
 Pillow==5.4.1
