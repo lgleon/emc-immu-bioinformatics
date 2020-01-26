@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-#import env
+import env
 #import django.core.context_processors.media
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -140,6 +140,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+#AWS_S3_OBJECT_PARAMETERS = {
+#    'Expires': 'Thu, 31 Dec 2099 20:00:00 CET',
+#    'CacheControl': 'max-age=94608000'
+#}
+
+#AWS_STORAGE_BUCKET_NAME = 'lety-emcbioinfo-project'
+#AWS_S3_REGION_NAME = 'eu-north'
+#AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+#AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKEåT_NAME
+
+#STATICFILES_STORAGE = 'storage.backends.s3boto3.S3Boto3Storage'
+
+
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -155,3 +171,4 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
+#MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
