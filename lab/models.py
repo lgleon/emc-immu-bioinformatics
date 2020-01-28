@@ -13,7 +13,7 @@ class Team(models.Model):
     resume = models.TextField('few lines of resume', max_length=200)
     experience = models.TextField('experience in data analysis',  max_length=120)
     skills = models.CharField(max_length=5)
-    email = models.EmailField()
+    email = models.EmailField() #buscar un validador de correo
 
     job_name = models.ForeignKey(Clients, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)

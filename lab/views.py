@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
-from .models import Team
 from .forms import JobStatus
 from django.shortcuts import get_object_or_404
 
@@ -14,11 +13,18 @@ from django.shortcuts import get_object_or_404
 def index(request):
     return render(request, 'index.html')
 
+
+
 def work(request):
     return render(request, 'work.html')
 
 def team(request):
     return render(request, 'team.html')
+
+
+
+def job_updated(request):
+    return render(request, 'job_update_submited.html')
 
 @login_required(login_url='/users/login')
 def job_status(request):
@@ -30,7 +36,7 @@ def job_status(request):
             if form.is_valid():
                 cd = form.cleaned_data
                 # assert False
-                return HttpResponseRedirect('/job_status/?submitted=True')
+                return HttpResponseRedirect('/lab/job_update_submited')
         else:
             form = JobStatus()
             if 'submitted' in request.GET:
@@ -42,8 +48,26 @@ def job_status(request):
         return render(request, 'index.html')
 
 
+# Rendering the projects html,
+# Those are the function to render the old htmls
+
+#def projects(request):
+#    return render(request, 'projects.html')
+
+def project1(request):
+    return render(request, 'project1.html')
+
+def project2(request):
+    return render(request, 'project2.html')
+
+def project3(request):
+    return render(request, 'project3.html')
+
+def project4(request):
+    return render(request, 'project4.html')
 
 
+# Way to allow only staff members
 
 """  
 In the template:

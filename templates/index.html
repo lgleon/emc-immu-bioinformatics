@@ -1,5 +1,4 @@
 {% load staticfiles%}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +23,7 @@
       <div class="col-lg-2"></div>
       <div class="container col-xs-12 col-lg-8">
         <div class="navbar-header">
-          <a class="navbar-brand" href="">BioInformatics Immunology EMC</a>
+          <a class="navbar-brand" href="/lab/">BioInformatics Immunology EMC</a>
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
                   aria-expanded="false">
             <span class="icon-bar"></span>
@@ -36,14 +35,16 @@
         <div id="navbar" class="collapse navbar-collapse" aria-expanded="true" style="height: 1px;">
           <ul class="nav navbar-nav">
             <li class="#">
-              <a href="../lab" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
+              <a href="/lab/" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
             </li>
-            <li><a href="/requestform/job_request"> Request a Bioinformtics Job</a> </li>
-			<li><a href="/lab/job_status"> Create a job status</a></li>
+            <li><a href="/requestform/job_request"> Request an analysis</a> </li>
+			<li><a href="/lab/job_status">Job update</a></li>
 			<li><a href="/priority/clients_data"> Clients </a></li>
-            <li><a href="/lab/templates/lab/work.html" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>
-            <li><a href="/lab/templates/lab/team.html" data-toggle="collapse" data-target=".navbar-collapse.in">Team</a></li>
+            <li><a href="/lab/work" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>
+            <li><a href="/lab/team" data-toggle="collapse" data-target=".navbar-collapse.in">Team</a></li>
             <li><a href="/contact/contact" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
+            <li><a href="/users/login" data-toggle="collapse" data-target=".navbar-collapse.in">Log in</a></li>
+            <li><a href="/cart/" data-toggle="collapse" data-target=".navbar-collapse.in">Cart</a></li>
           </ul>
         </div>
       </div>
@@ -55,9 +56,9 @@
       <div class="content col-xs-12 col-lg-8">
         <p>
           Bioinformatics Immunology is a
-          <a href="labo/team.html">team</a>
+          <a href="/lab/team">team</a>
           inside
-          <a href="https://www6.erasmusmc.nl/immunologie/departm/intro.immu/?lang=en" target="_blank">Immunology
+          <a href="https://www.immunology.nl" target="_blank">Immunology
             department</a>
           to give support for any genomics anlysis.
         </p>
@@ -67,7 +68,7 @@
         </div>
         <div class="second-statement">
           <p> We collaborate in several
-            <a href="labo/work.html">projects</a>
+            <a href="/lab/work">projects</a>
             with other groups in the department.
             If you have genomic data and needs a hand.
             Please

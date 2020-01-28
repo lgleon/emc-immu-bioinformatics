@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {% block title %} Log In page {% endblock title %}
 
 {% block content %}
@@ -17,7 +17,7 @@
 {% endif %}
 
 <form method="post" action="{% url 'users_login' %}">
-<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+{% csrf_token %}
 <table>
 <tr>
     <td>{{ form.username.label_tag }}</td>
