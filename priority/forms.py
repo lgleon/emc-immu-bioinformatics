@@ -9,3 +9,9 @@ class Clients_data(ModelForm):
     class Meta:
         model = Clients
         fields = '__all__'
+        widgets = {
+            'user': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Who is requesting this job'}),
+            'department': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Department'}),
+            'supervisor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Supervisor'}),
+            'project': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Project name'}),
+        }

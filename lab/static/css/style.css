@@ -203,6 +203,14 @@ button[ type="submit"] {
 }
 
 
+/*-------------------------------------------- The forms clients, request and lab*/
+
+.required {
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 70%;
+}
+
 /*--------------------------------------------Team*/
 
 .content-team {

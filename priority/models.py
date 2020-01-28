@@ -10,9 +10,9 @@ class Clients(models.Model):
 
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    department = models.CharField('department which request a job',max_length=30)
-    supervisor = models.CharField('Pincipal Investigator', max_length=20)
-    project = models.CharField('name of the project where this job is included', max_length=100)
+    department = models.CharField('PI Department',max_length=30)
+    supervisor = models.CharField('Project PI', max_length=20)
+    project = models.CharField('Project name', max_length=100)
 
 
     def __str__(self):
