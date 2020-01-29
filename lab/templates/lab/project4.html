@@ -6,34 +6,32 @@
   <section class="container-fluid row">
     <div class="col-lg-2"></div>
     <div class="content col-xs-12 col-lg-8">
-      <h2>CD8 T cell exhaustion model</h2>
+      <h2>WES and transcriptomics: NeoAntigenes</h2>
       <p class="container intro">
-        Exhaustion is a dysfunctional state of cytotoxic CD8+ T cells (CTL) observed in chronic infection and cancer.
-        Current in vivo models of CTL exhaustion using chronic viral infections or cancer yield very few exhausted CTL,
-        limiting the analysis that can be done on these cells. Establishing an in vitro system that induces CTL
-        exhaustion could therefore greatly facilitate the study of this phenotype.
+        This is a cancer immunotherapy pipeline for the identification of specific Variant Antigens by Cancer
+      Sequencing that integrates tumor mutation and expression data (DNA- and RNA-Seq). It enables cancer
+      immunotherapy research by using massively parallel sequence data to predicting tumor-specific mutant
+      peptides (neoantigens) that can elicit anti-tumor T cell immunity. It is being used in studies of
+      checkpoint therapy response and to identify targets for personalized cancer vaccines and adoptive
+      T cell therapies.
       </p>
       <p>
         <img class="figure3_1" src="{% static "lab/media/image/Fig4_1.png" %}">
       </p>
       <p class="container results">
-        Purified TCR transgenic OT-1 CTL from mice were cultured with cytokines and were repeatedly stimulated with
-        SIINFEKL peptide. After harvesting cells on day 5, inhibitory receptors (IRs) and cytokine production were
-        assayed by flow cytometry. RNAseq was performed with the sorted cells. Differential expressed genes, Principle
-        Component Analysis (PCA), Ingenuity Pathway Analysis (IPA) and Gene Set Enrichment Analysis (GSEA) were
-        performed with the data.
-        Multiple inhibitory receptors, PD-1, Lag3, Tim3, TIGIT, CD244 and CD160 were highly upregulated and co-expressed
-        on the repeated
-        peptide stimulated cells than the cells without or with single stimulation. Repeated peptide stimulation also
-        impaired function of CTL as production of IL-2, IFN-γ and TNF-α was dramatically reduced, polyfunctionality was
-        greatly diminished.
+        Here we offer a new neoantigen discovery pipeline as a contiguous means of predicting putative
+      neoantigens and their corresponding recognition potentials for both single and multi-region
+      tumor samples. NeoPredPipe is able to quickly provide summary information for researchers,
+      and clinicians alike, on predicted neoantigen burdens while providing high-level insights into
+      tumor heterogeneity given somatic mutation calls and, optionally, patient HLA haplotypes. Given
+      an example dataset we show how NeoPredPipe is able to rapidly provide insights into neoantigen
+      heterogeneity, burden, and immune stimulation potential.
       </p>
       <img class="figure3_2" src="{% static "lab/media/image/Fig4_2.png" %}">
       <p class="container-fluid conclusions">
-        Repeated stimulating CTL with the specific peptide, induced all the functional, phenotypic and transcriptomic
-        characteristics of exhausted CTL. They express multiple IRs and lose proliferative capacity and
-        polyfunctionality.
-        The transcriptional pattern of these cells is close to that previously described for exhausted CTL.
+        Through the integration of widely adopted tools for neoantigen discovery our new pipeline
+      offers a contiguous means of processing single and multi-region sequence data. NeoPredPipe
+      is user-friendly and adaptable for high-throughput performance.
       </p>
       <form>
         <button type="button" class="btn btn-primary center-block" onclick="history.back()">Go Back!</button>

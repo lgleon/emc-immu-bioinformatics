@@ -34,9 +34,10 @@ def job_status(request):
         if request.method == 'POST':
             form = JobStatus(request.POST)
             if form.is_valid():
+                form.save()
                 cd = form.cleaned_data
                 # assert False
-                return HttpResponseRedirect('/lab/job_update_submited')
+                return HttpResponseRedirect('/lab/job_updated')
         else:
             form = JobStatus()
             if 'submitted' in request.GET:
@@ -50,9 +51,6 @@ def job_status(request):
 
 # Rendering the projects html,
 # Those are the function to render the old htmls
-
-#def projects(request):
-#    return render(request, 'projects.html')
 
 def project1(request):
     return render(request, 'project1.html')

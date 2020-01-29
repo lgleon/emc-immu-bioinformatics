@@ -203,6 +203,7 @@ button[ type="submit"] {
 }
 
 
+
 /*-------------------------------------------- The forms clients, request and lab*/
 
 .required {
@@ -212,6 +213,16 @@ button[ type="submit"] {
 }
 
 
+
+/*-------------------------------------------- Style for the success submitted text in clients, request and lab*/
+
+.success-text {
+  font-family: "Exo", sans-serif;
+  font-weight: 300;
+  color: blue;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
 
 
 
