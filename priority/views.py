@@ -18,6 +18,7 @@ def clients_data(request):
         form = Clients_data(request.POST)
         if form.is_valid():
             form.save()
+            print(form.is_valid(), "form is valid")
             cd = form.cleaned_data
             return HttpResponseRedirect('/priority/client_submited')
     else:

@@ -51,7 +51,7 @@ def index(request):
 #                   {'date': datetime.now(), 'login': current_user})
 
 def job_submited():
-    return render(request, 'job_request_submited.html')
+    return render(request, 'job_request_submited.html', {'priority': job.priority_status})
 
 @login_required(login_url='/users/login')
 def job_request(request):
@@ -70,5 +70,5 @@ def job_request(request):
         form = RequestJobs()
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'job_request.html', {'form': form, 'submitted' : submitted})
+    return render(request, 'job_request.html', {'form': form, 'submitted': submitted})
 
