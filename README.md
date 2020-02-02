@@ -156,9 +156,9 @@ Languages, frameworks, libraries, and any other tools used to construct this pro
 - [Django](https://www.djangoproject.com/)
     - **Django** as the back-end framework to simplify configuration of the application and routing, to render HTML templates, work with client requests  and to assist with user session management.
 - [Stripe](https://dashboard.stripe.com/register)
-    - **Flask-PyMongo** to connect the application to MongoDB and for retrieving, inserting, updating and deleting data to and from the database.
+    - **Stripe** 
 - [Travis](https://travis-ci.org/)
-    - **MongoDB**, and more specifically MongoDB Atlas, as it's database system used to store data about users and recipes.
+    - **Travis Continuous Integration**, connects to my GitHub account and run test I pushed to gitHub giving me pass/fail results.
 - [Heroku](https://www.heroku.com/) 
     - **Heroku**, Platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
