@@ -14,7 +14,7 @@ EMC Bioinformatic Immunology Lab
 [EMC Bioinformatic Immunology Lab](https://github.com/lgleon/emc-immu-bioinformatics) This repository contains the code for the online Web site for Bioinformtic group in the EMC-Immunology department. It is primarily built using Python (back-end) and the 
 Django framework and uses sql3 for the database. It also uses the Bootstrap framework on the front-end.
 That application was built for fourth Milestone Project at Code Institute.
-The live project can be viewed [here](https://##################.herokuapp.com/).
+The live project can be viewed [here](https://lety-emcbioinfo.herokuapp.com/).
 
 </div>
 
@@ -198,7 +198,7 @@ visit [How to clone from GitHub](https://help.github.com/en/articles/cloning-a-r
 
 This project was then deployed to Heroku to host the live application, following the steps below:
 
-1. Log in to [Heroku](https://www.************************heroku.com/) and create a new app called 'didaccookbook'
+1. Log in to [Heroku](https://lety-emcbioinfo.herokuapp.com/) and create a new app called 'didaccookbook'
 2. Log in to Heroku in the CLI
 3. Add the remote Heroku repo
 4. Create the requirements.txt file by running `pip3 freeze --local > requirements.txt` in the CLI
@@ -207,7 +207,7 @@ This project was then deployed to Heroku to host the live application, following
 7. Set environment variables in Heroku for IP, PORT and MONGO_URI
 8. Restart all dynos on Heroku
 
-The live project can be viewed [here](https://********************************8.herokuapp.com/).
+The live project can be viewed [here](https://lety-emcbioinfo.herokuapp.com/).
 
 ## Databse schema:
 
