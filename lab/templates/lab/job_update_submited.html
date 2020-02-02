@@ -1,7 +1,19 @@
 {% extends "index.html" %}
 {%  load staticfiles %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
 {% block title %} Update job status form submitted {% endblock title %}
 
 {% block content %}
-  <p class="success-text">Well done, You successfully update the job status </p>
+
+<div class="success-text">
+    {% for item in job %}
+	    <p>
+	    Well done, You successfully update the job status {{ item.job_name }}
+	    </p>
+    {% endfor %}
+</div>
+
+
+
 {% endblock %}

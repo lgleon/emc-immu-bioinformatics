@@ -8,8 +8,8 @@ class Team(models.Model):
     Create models to have the profile for each member of the lab team and to know whos is working and making
     the job status update
     """
-    name = models.CharField('name of the team member', max_length=5)
-    position = models.CharField('owrk position of the eam member', max_length=5)
+    name = models.CharField('Team member', max_length=5)
+    position = models.CharField('work position of the team member', max_length=5)
     resume = models.TextField('few lines of resume', max_length=200)
     experience = models.TextField('experience in data analysis',  max_length=120)
     skills = models.CharField(max_length=5)

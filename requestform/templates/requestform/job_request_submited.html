@@ -1,7 +1,17 @@
 {% extends "index.html" %}
 {%  load staticfiles %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
 {% block title %} Request job form submitted {% endblock title %}
 
 {% block content %}
-  <p class="success-text">Thanks, You successfully requested a bioinformatic analysis with  </p>
+<div class="success-text">
+    {% for item in job %}
+	    <p >
+	    Thanks, You successfully requested a bioinformatic analysis, your job id is: {{ item.id }},
+		    your priority level is: {{ item.priority_status }}
+	    </p>
+    {% endfor %}
+</div>
+
 {% endblock %}

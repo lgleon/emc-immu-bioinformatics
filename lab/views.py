@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from datetime import datetime
 from .forms import JobStatus
 from django.shortcuts import get_object_or_404
-
+from requestform.models import Jobs
 
 #def index(request):
 #return HttpResponse("Hello, world. I am in the lab lost with Alice in wonderland")
@@ -14,6 +14,7 @@ def index(request):
     return render(request, 'index.html')
 
 
+# rendering html for work/projects and team
 
 def work(request):
     return render(request, 'work.html')
@@ -22,21 +23,23 @@ def team(request):
     return render(request, 'team.html')
 
 
+# functions for Job status update
 
 def job_updated(request):
-    return render(request, 'job_update_submited.html')
+    job = Jobs.objects.all()
+    return render(request, 'job_update_submited.html', {'job': job})
 
 @login_required(login_url='/users/login')
 def job_status(request):
     submitted = False
     if request.user.is_staff:
-
         if request.method == 'POST':
             form = JobStatus(request.POST)
             if form.is_valid():
-                form.save()
+                #form.save()
                 cd = form.cleaned_data
                 # assert False
+                job = Jobs.objects.all()
                 return HttpResponseRedirect('/lab/job_updated')
         else:
             form = JobStatus()

@@ -5,6 +5,7 @@ from datetime import datetime
 from .models import Jobs
 from .request import RequestJobs
 import logging
+from django.template import loader
 
 logger = logging.getLogger(__name__)
 logging.config.dictConfig({
@@ -50,8 +51,10 @@ def index(request):
 #    return render (request, 'test.html',
 #                   {'date': datetime.now(), 'login': current_user})
 
-def job_submited():
-    return render(request, 'job_request_submited.html', {'priority': job.priority_status})
+def job_submited(request):
+    job = Jobs.objects.all()
+    return render(request, 'job_request_submited.html', {'job': job})
+
 
 @login_required(login_url='/users/login')
 def job_request(request):
@@ -63,6 +66,7 @@ def job_request(request):
         form = RequestJobs(request.POST)
         if form.is_valid():
             form.save()
+            #job = Jobs.objects.all()
             logger.info("The job id %s", form.auto_id)
             return HttpResponseRedirect('/requestform/job_submited')
 

@@ -1,4 +1,6 @@
 {% load staticfiles%}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,14 +39,21 @@
             <li class="#">
               <a href="/lab/" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
             </li>
+            {% if user.is_authenticated %}
             <li><a href="/requestform/job_request"> Request an analysis</a> </li>
 			<li><a href="/lab/job_status">Job update</a></li>
-			<li><a href="/priority/clients_data"> Clients </a></li>
+            {% else %}
+            <li><a href="/priority/clients_data"> Clients </a></li>
             <li><a href="/lab/work" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>
             <li><a href="/lab/team" data-toggle="collapse" data-target=".navbar-collapse.in">Team</a></li>
             <li><a href="/contact/contact" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
-            <li><a href="/users/login" data-toggle="collapse" data-target=".navbar-collapse.in">Log in</a></li>
-            <li><a href="/cart/" data-toggle="collapse" data-target=".navbar-collapse.in">Cart</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="/users/logout" data-toggle="collapse" data-target=".navbar-collapse.in">Log out</a></li>
+          	<li><a href="/cart/" data-toggle="collapse" data-target=".navbar-collapse.in">Cart</a></li>
+            {% else %}
+	        <li><a href="/users/login" data-toggle="collapse" data-target=".navbar-collapse.in">Log in</a></li>
+           {% endif %}
           </ul>
         </div>
       </div>

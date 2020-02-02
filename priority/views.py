@@ -9,7 +9,8 @@ def index(request):
     return HttpResponse("Hello, world. I am in the priority part")
 
 def client_submited(request):
-    return render(request, 'client_submited.html')
+    clients = Clients.objects.all()
+    return render(request, 'client_submited.html', {'clients': clients})
 
 @login_required(login_url='/users/login')
 def clients_data(request):

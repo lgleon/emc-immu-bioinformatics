@@ -4,19 +4,19 @@
 {% block content %}
 
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<p class="log-part">Your username and password didn't match. Please try again.</p>
 {% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
+    <p class="log-part">Your account doesn't have access to this page. To proceed,
     please login with an account that has access.</p>
     {% else %}
-    <p>Please login to see this page.</p>
+    <p class="log-part">Please login to see this page.</p>
     {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'users_login' %}">
+<form class="user-log"method="post" action="{% url 'users_login' %}">
 {% csrf_token %}
 <table>
 <tr>
@@ -29,7 +29,7 @@
 </tr>
 </table>
 
-<input type="submit" value="login">
+<button type="submit" class="btn btn-secondary center-block"><input type="submit" value="login"></button>
 <input type="hidden" name="next" value="{{ next }}">
 </form>
 

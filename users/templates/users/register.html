@@ -7,12 +7,16 @@
     {{ form.errors }}
 {% endif %}
 
-<form method="post" action="{% url 'users_register' %}">
+<form class="user-log" method="post" action="{% url 'users_register' %}">
 {% csrf_token %}
 <table>
 <tr>
     <td>{{ form.username.label_tag }}</td>
     <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.email.label_tag }}</td>
+    <td>{{ form.email }}</td>
 </tr>
 <tr>
     <td>{{ form.password1.label_tag }}</td>
@@ -24,7 +28,11 @@
 </tr>
 </table>
 
-<input type="submit" value="register">
+<button type="submit" class="btn btn-secondary center-block"><input type="submit" value="register"></button>
 </form>
 
 {% endblock %}
+
+<!--
+<input type="text" name="username" placeholder="username">
+-->

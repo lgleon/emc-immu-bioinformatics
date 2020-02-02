@@ -1,7 +1,16 @@
 {% extends "index.html" %}
 {%  load staticfiles %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
 {% block title %} Client form submitted {% endblock title %}
 
 {% block content %}
-  <p class="success-text">Thanks for trust in our work. Now you are part of our family </p>
+	<div class="success-text">
+    {% for item in clients %}
+	  <p>
+		  Thanks for trust in our work. Now you {{ item.user }} and your supervisor {{ item.supervisor }}
+		  are part of our family
+	  </p>
+	{% endfor %}
+	</div>
 {% endblock %}

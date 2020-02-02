@@ -68,7 +68,7 @@ a:hover {
 }
 
 .navbar-brand {
-  font-size: 15px;
+  font-size: 12px;
 
 }
 
@@ -80,7 +80,7 @@ a:hover {
   color: blue;
 }
 
-/* cabeceras */
+/* headers */
 h2:first-of-type {
   margin-top: 0 !important;
 }
@@ -93,11 +93,6 @@ h2 {
 
 p {
   padding-bottom: 1em;
-}
-
-
-.home-info {
-
 }
 
 img {
@@ -212,19 +207,48 @@ button[ type="submit"] {
   max-width: 70%;
 }
 
-
+.formsModels {
+  /*padding-top: 3em;*/
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
 
 /*-------------------------------------------- Style for the success submitted text in clients, request and lab*/
 
 .success-text {
+  padding-top: 10em;
   font-family: "Exo", sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   color: blue;
   margin-top: 70px;
   margin-bottom: 20px;
 }
 
 
+
+/*-------------------------------------------- Log out and when errors in log in*/
+
+.log-part {
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  padding-top: 3em;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+/*-------------------------------------------- Log in and register forms*/
+.user-log {
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  padding-top: 3em;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
 
 /*--------------------------------------------Team*/
 
