@@ -29,7 +29,7 @@ SECRET_KEY = '22ioik$lorgg4*@m+uqqw73+8okqe5#sj$z%^%+uoonk1rhx@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://lety-emcbioinfo.herokuapp.com/']
 
 
 # Application definition
