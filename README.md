@@ -2,7 +2,7 @@
 
 
 <h3 align="center">
-Didacs Collaborative Cook Book
+EMC Bioinformatic Immunology Lab
 </h3>
 
 <h3 align="center">
