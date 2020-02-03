@@ -8,8 +8,8 @@
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
+#db.sqlite3
+#db.sqlite3-journal
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
@@ -207,7 +207,7 @@ fabric.properties
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator/
 
-*.sqlite3
+#*.sqlite3
 *.pyc
 __pycahce__/
 
