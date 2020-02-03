@@ -6,8 +6,11 @@ from requestform.models import Jobs
 
 def view_cart(request):
     """A View that renders the cart contents"""
-    cart = Jobs.objects.all()
+    #my_cart = request.session['job_name']
+    current_user = request.user
+    cart = Jobs.objects.filter(is_payed=False, usuario=current_user)
     print(cart)
+    #print(my_cart)
     return render(request, "cart.html",
                   {'cart': cart})
 

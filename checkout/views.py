@@ -11,8 +11,10 @@ from django.utils import timezone
 from requestform.models import Jobs
 
 
-""" aqui he cambiado Product por Priority que es lo que la gente esta comprando en el mi app, 
-quantity is refer to priority-level, more quantity more level"""
+""" 
+aqui he cambiado Product por Priority que es lo que la gente esta comprando en el mi app, 
+quantity is refer to priority-level, more quantity more level 
+"""
 
 def index(request):
     return HttpResponse("Hello, world. I am in the checkout")
@@ -56,6 +58,11 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
+                current_user = request.user
+                jobs = Jobs.objects.filter(is_payed=False, usuario=current_user)
+                for job in jobs:
+                    job.is_payed = True
+                    job.save()
                 return redirect(reverse('products'))
             else:
                 messages.error(request, "Unable to take payment")
@@ -65,10 +72,13 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
-        jobs = Jobs.objects.all()
+        current_user = request.user
+        jobs = Jobs.objects.filter(is_payed=False, usuario=current_user)
         for job in jobs:
             print(job.job_name)
             print(job.priority_status)
 
     return render(request, "checkout.html",
                   {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+
+

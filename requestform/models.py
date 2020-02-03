@@ -44,4 +44,4 @@ class Jobs(models.Model):
     is_payed = models.BooleanField(default=False, editable=False)
 
     def __str__(self):
-        return "{0}-{1}-{2}-{3}".format(self.job_name, self.usuario, self.subject, self.priority_status)
+        return "{0}-{1}-{2}-{3}".format(self.job_name, self.usuario.email, self.subject, self.priority_status)

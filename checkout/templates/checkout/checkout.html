@@ -19,10 +19,9 @@
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
 
                 <div class="caption">
-                    <h3>{{ item.product.name }}</h3>
-                    <p class="product-description">{{ item.product.description }}</p>
-                    <p>{{ item.quantity }}</p>
-                    <p>{{ item.product.price }}</p>
+                    <h3> You Successfully paid for: {{ item.job_name}}</h3>
+                    <p>{{ item.job.id }}</p>
+                    <p>{{ item.usuario }}</p>
                 </div>
             </div>
         </div>
