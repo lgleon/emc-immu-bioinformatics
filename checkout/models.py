@@ -1,8 +1,13 @@
+import stripe
 from django.db import models
-from priority.models import Clients
+
+from emcbioinfo import settings
 from requestform.models import Jobs
 
 # Create your models here.
+
+stripe.api_key = settings.STRIPE_SECRET
+
 
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
@@ -18,9 +23,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    """ Quantity is refer to Priority-level and it is related like that: 0==none, 1==Low, 2==Mid and
+    """ Priority-level and it is related like that: 0==none, 1==Low, 2==Mid and
     3==High"""
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=False)
+    order = models.ForeignKey(Order, on_delete=models.DO_NOTHING, null=False)
     job = models.ForeignKey(Jobs, related_name='job', on_delete=models.DO_NOTHING, blank=False)
 
 

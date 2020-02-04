@@ -201,6 +201,16 @@ button[ type="submit"] {
 
 /*-------------------------------------------- The forms clients, request and lab*/
 
+.forms-text {
+  padding-top: 3em;
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+
 .required {
   padding-top: 10px;
   margin: 0 auto;

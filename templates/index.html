@@ -40,8 +40,8 @@
               <a href="/lab/" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
             </li>
             {% if user.is_authenticated %}
-            <li><a href="/requestform/job_request"> Request an analysis</a> </li>
-			<li><a href="/lab/job_status">Job update</a></li>
+            <li><a href="/requestform/job_request"> Analysis request</a> </li>
+			<li><a href="/lab/job_status">JobUpdate</a></li>
             {% else %}
             <li><a href="/priority/clients_data"> Clients </a></li>
             <li><a href="/lab/work" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>

@@ -41,7 +41,17 @@ class Jobs(models.Model):
     detailed_summary = models.TextField(blank=False)
     other_info = models.TextField(blank=True)
 
-    is_payed = models.BooleanField(default=False, editable=False)
+    is_payed = models.BooleanField(default=False)#, editable=False)
 
     def __str__(self):
         return "{0}-{1}-{2}-{3}".format(self.job_name, self.usuario.email, self.subject, self.priority_status)
+
+    def get_priority_value(self):
+        if self.priority_status == Jobs.LOW:
+            return 5
+        elif self.priority_status == Jobs.MID:
+            return 10
+        elif self.priority_status == Jobs.HIGH:
+            return 15
+        else:
+            return 0

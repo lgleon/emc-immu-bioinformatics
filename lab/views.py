@@ -38,8 +38,6 @@ def job_status(request):
             if form.is_valid():
                 #form.save()
                 cd = form.cleaned_data
-                # assert False
-                job = Jobs.objects.all()
                 return HttpResponseRedirect('/lab/job_updated')
         else:
             form = JobStatus()

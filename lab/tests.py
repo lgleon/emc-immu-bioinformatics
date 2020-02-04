@@ -27,5 +27,5 @@ class TeamTest(TestCase):
     def test_view(self):
         """This checks the tickets view page has loaded correctly"""
         res = self.client.get('/lab/')
-        assert b'request' in res.content
+        assert b'team' in res.content
 

@@ -177,7 +177,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = "/lab"
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+#STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+STRIPE_SECRET = "sk_test_xa53Ub9W3pk6EMWEHHuzmEKw00eftux3gR"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

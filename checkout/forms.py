@@ -1,4 +1,6 @@
 from django import forms
+
+from checkout.models import Order
 from priority.models import Clients
 from requestform.models import Jobs
 
@@ -18,7 +20,8 @@ class MakePaymentForm(forms.Form):
 class OrderForm(forms.ModelForm):
 
     class Meta:
-        model = Clients
-        fields = (
-            'supervisor', 'department', 'project'
-        )
+        model = Order
+        fields = '__all__'
+        widgets = {
+            'date': forms.SelectDateWidget(attrs={'type': 'date', 'class': 'form-control'}),
+        }
