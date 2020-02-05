@@ -240,6 +240,19 @@ button[ type="submit"] {
 }
 
 
+/*-------------------------------------------- To display the cart content and total*/
+
+.cart-content{
+  padding-top: 3em;
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+
+
 
 /*-------------------------------------------- Log out and when errors in log in*/
 

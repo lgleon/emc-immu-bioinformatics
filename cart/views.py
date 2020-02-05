@@ -1,18 +1,19 @@
 from django.shortcuts import render, redirect, reverse
 from django.shortcuts import get_object_or_404
 from requestform.models import Jobs
-
+from checkout.forms import MakePaymentForm, OrderForm
+from checkout.models import OrderLineItem
 # Create your views here.
 
 def view_cart(request):
     """A View that renders the cart contents"""
-    #my_cart = request.session['job_name']
     current_user = request.user
     cart = Jobs.objects.filter(is_payed=False, usuario=current_user)
-    print(cart)
+    total = 0
+    for item in cart:
+        total += 20 + item.get_priority_value()
     #print(my_cart)
-    return render(request, "cart.html",
-                  {'cart': cart})
+    return render(request, "cart.html", {'cart': cart, 'total': total})
 
 
 

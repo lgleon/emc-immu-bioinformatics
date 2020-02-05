@@ -30,14 +30,14 @@ def checkout(request):
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
         jobs = Jobs.objects.filter(is_payed=False, usuario=request.user)
-        print("is the form valid¿")
+        #print("is the form valid¿")
         if order_form.is_valid() and payment_form.is_valid():
-            print("it is!")
+            #print("it is!")
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.user = request.user
             order.save()
-            print(type(order))
+            #print(type(order))
             total = 0
             for job in jobs:
                 total += 20 + job.get_priority_value()
