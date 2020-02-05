@@ -46,14 +46,10 @@ def index(request):
     logger.info("Call me baby!")
     return HttpResponse('<iframe width="560" height="315" src="https://www.youtube.com/embed/fQGbXmkSArs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
 
-#def testing(request):
-#    current_user = "Mable Marbles"
-#    return render (request, 'test.html',
-#                   {'date': datetime.now(), 'login': current_user})
 
 def job_submited(request):
-    job = Jobs.objects.all()
-    return render(request, 'job_request_submited.html', {'job': job})
+    jobs = Jobs.objects.filter(is_payed=False, usuario=request.user)
+    return render(request, 'job_request_submited.html', {'jobs': jobs})
 
 
 @login_required(login_url='/users/login')
@@ -66,7 +62,6 @@ def job_request(request):
         form = RequestJobs(request.POST)
         if form.is_valid():
             form.save()
-            #job = Jobs.objects.all()
             logger.info("The job id %s", form.auto_id)
             return HttpResponseRedirect('/requestform/job_submited')
 

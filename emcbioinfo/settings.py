@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-#import env
+import env as alias_env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -177,8 +177,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = "/lab"
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
-#STRIPE_SECRET = os.getenv('STRIPE_SECRET')
-STRIPE_SECRET = "sk_test_xa53Ub9W3pk6EMWEHHuzmEKw00eftux3gR"
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

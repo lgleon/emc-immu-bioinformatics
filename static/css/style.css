@@ -206,7 +206,7 @@ button[ type="submit"] {
   font-family: "Exo", sans-serif;
   font-weight: 200;
   color: blue;
-  margin-top: 100px;
+  margin-top:50px;
   margin-bottom: 20px;
 }
 
@@ -218,11 +218,11 @@ button[ type="submit"] {
 }
 
 .formsModels {
-  /*padding-top: 3em;*/
+  padding-top: 3em;
   font-family: "Exo", sans-serif;
   font-weight: 200;
   color: blue;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 20px;
 }
 

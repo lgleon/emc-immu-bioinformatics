@@ -30,4 +30,4 @@ class OrderLineItem(models.Model):
 
 
     def __str__(self):
-        return "{0}-{1}".format(self.job, self.job.price)
+        return "{0}-{1}".format(self.job, self.order)

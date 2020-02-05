@@ -3,6 +3,10 @@
 {% load bootstrap_tags %}
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
 <script type="text/javascript">
     //<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
@@ -15,15 +19,9 @@
 <div class="row row-flex">
     {% for item in cart_items %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-
-                <div class="caption">
-                    <h3> You Successfully paid for: {{ item.job_name}}</h3>
-                    <p>{{ item.job.id }}</p>
-                    <p>{{ item.usuario }}</p>
-                </div>
-            </div>
+            <h3> You Successfully paid for: {{ item.job_name}}</h3>
+            <p>{{ item.job.id }}</p>
+            <p>{{ item.usuario }}</p>
         </div>
     {% endfor %}
 </div>
@@ -38,24 +36,21 @@
     <div id="credit-card-errors" style="display: none;">
         <div id="alert-message block-message error" id="stripe-error-message"></div>
     </div>
-
 	<div class="forms-text">
         {% for job in jobs %}
 		You are paying for <strong>{{ job.job_name }}</strong> with a <strong>{{ job.priority_status }}</strong> priority
 		{% endfor %}
     </div>
-
     <div class="form-group col-md-6">
         {{ order_form | as_bootstrap }}
     </div>
-
     <div class="form-group col-md-6">
         {{ payment_form | as_bootstrap }}
     </div>
-
     <{% csrf_token %}
     <div class="form-group col-md-12">
         <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>
 </form>
+
 {% endblock %}

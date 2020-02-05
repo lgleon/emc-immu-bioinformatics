@@ -41,7 +41,7 @@ class Jobs(models.Model):
     detailed_summary = models.TextField(blank=False)
     other_info = models.TextField(blank=True)
 
-    is_payed = models.BooleanField(default=False)#, editable=False)
+    is_payed = models.BooleanField(default=False, editable=False)
 
     def __str__(self):
         return "{0}-{1}-{2}-{3}".format(self.job_name, self.usuario.email, self.subject, self.priority_status)

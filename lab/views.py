@@ -26,8 +26,8 @@ def team(request):
 # functions for Job status update
 
 def job_updated(request):
-    job = Jobs.objects.all()
-    return render(request, 'job_update_submited.html', {'job': job})
+    jobs = Jobs.objects.filter(is_payed=False, usuario=request.user)
+    return render(request, 'job_update_submited.html', {'jobs': jobs})
 
 @login_required(login_url='/users/login')
 def job_status(request):

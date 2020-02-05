@@ -6,9 +6,9 @@
 
 {% block content %}
 	<div class="success-text">
-    {% for item in clients %}
+    {% for client in clients %}
 	  <p>
-		  Thanks for trust in our work. Now you {{ item.user }} and your supervisor {{ item.supervisor }}
+		  Thanks for trust in our work. Now you {{ client.user }} and your supervisor {{ client.supervisor }}
 		  are part of our family
 	  </p>
 	{% endfor %}

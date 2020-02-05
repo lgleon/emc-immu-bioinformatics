@@ -7,9 +7,9 @@
 {% block content %}
 
 <div class="success-text">
-    {% for item in job %}
+    {% for job in jobs %}
 	    <p>
-	    Well done, You successfully update the job status {{ item.job_name }}
+	    Well done, You successfully update the job status {{ job.job_name }}
 	    </p>
     {% endfor %}
 </div>

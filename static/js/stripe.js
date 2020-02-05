@@ -1,6 +1,7 @@
 $(function() {
     $("#payment-form").submit(function() {
         var form = this;
+        console.log("submitting form")
         var card = {
             number: $("#id_credit_card_number").val(),
             expMonth: $("#id_expiry_month").val(),
