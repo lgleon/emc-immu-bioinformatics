@@ -1,27 +1,61 @@
 {% load staticfiles%}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	      type="text/css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	      type="text/css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
+	      type="text/css"/>
+	<link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale-1">
 	<meta charset="UTF-8">
-	<title>This is the base view </title>
+	<link rel="shortcut icon" href="{% static "lab/media/image/favicon.ico" %}"/>
 	{% block head_js %}
-    {% endblock head_js %}
+	{% endblock head_js %}
 </head>
-<body>
-<aside id="rightsidebar">
-	<nav id="nav">
-		<ul>
-			<li><a href="/requestform/job_request"> Request a Bioinformtics Job</a> </li>
+<div>
 
-			<li> Team</li>
-			<li> user</li>
-			<li><a href="/lab/job_status"> Create a job status</a></li>
-			<li><a href="/priority/clients_data"> Clients </a></li>
-		</ul>
-	</nav>
-</aside>
-
-{% block content %}{% endblock %}
-
-</body>
+<div class="container">
+	<nav class="navbar navbar-inverse navbar-fixed-top row">
+		<div class="col-lg-2"></div>
+		<div class="container col-xs-12 col-lg-8">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/lab/">BioInformatics Immunology EMC</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+				        aria-expanded="false">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="col-lg-2"></div>
+			<div id="navbar" class="collapse navbar-collapse" aria-expanded="true" style="height: 1px;">
+				<ul class="nav navbar-nav">
+					<li class="#">
+						<a href="/lab/" data-toggle="collapse" data-target=".navbar-collapse.in">Home</a>
+					</li>
+					{% if user.is_authenticated %}
+						<li><a href="/requestform/job_request"> Analysis request</a> </li>
+						<li><a href="/lab/job_status">JobUpdate</a></li>
+					{% else %}
+						<li><a href="/priority/clients_data"> Clients </a></li>
+						<li><a href="/lab/work" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>
+						<li><a href="/lab/team" data-toggle="collapse" data-target=".navbar-collapse.in">Team</a></li>
+						<li><a href="/contact/contact" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
+					{% endif %}
+					{% if user.is_authenticated %}
+						<li><a href="/users/logout" data-toggle="collapse" data-target=".navbar-collapse.in">Log out</a></li>
+						<li><a href="/cart/" data-toggle="collapse" data-target=".navbar-collapse.in">Cart</a></li>
+					{% else %}
+						<li><a href="/users/login" data-toggle="collapse" data-target=".navbar-collapse.in">Log in</a></li>
+						<li><a href="/users/register" data-toggle="collapse" data-target=".navbar-collapse.in">Register</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>˘
 </html>
