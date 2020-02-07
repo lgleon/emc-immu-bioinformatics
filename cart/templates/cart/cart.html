@@ -5,17 +5,19 @@
 {% block content %}
 <div class="cart-content">
     {% for item in cart %}
-	    <p>
-	    {{ item.usuario.username }}
-	    </p>
-	    <p>
-	    {{ item.job_name }}
-	    </p>
-	    <p>
-	    {{ item.priority_status }}
-	    </p>
+        <p>
+	    {{ item.usuario.username }}, {{ item.job_name }}
+		<select id="priority">
+			<option value="">{{ item.priority_status }}</option>
+			<option value="high">High</option>
+			<option value="mid">Mid</option>
+			<option value="low">Low</option>
+			<option value="none">None</option>
+		</select>
+        </p>
     {% endfor %}
 </div>
+
 <div class="cart-content">
     <p>Total</p>
     <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
