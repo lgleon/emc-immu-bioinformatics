@@ -9,10 +9,10 @@ class Contact(models.Model):
     """
     Create models to have a record of the people who contact our lab and will possible users/clients
     """
-    name = models.CharField('name of the person who contact', max_length=5)
+    name = models.CharField('Name', max_length=30)
     email = models.EmailField()
-    institution = models.CharField('owrk position of the eam member', max_length=5)
-    inquiry = models.TextField('few lines of resume', max_length=200)
+    institution = models.CharField('University, company', max_length=30)
+    inquiry = models.TextField('Question', max_length=200)
 
 
     def __str__(self):

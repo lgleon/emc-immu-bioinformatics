@@ -1,4 +1,5 @@
 from django.contrib import admin
+from contact.models import Contact
 from priority.models import Clients
 from .models import Order, OrderLineItem
 from requestform.models import Jobs
@@ -20,4 +21,5 @@ admin.site.register(Order, OrderAdmin)
 admin.site.register(Clients)
 admin.site.register(Jobs)
 admin.site.register(OrderLineItem)
+admin.site.register(Contact)
 

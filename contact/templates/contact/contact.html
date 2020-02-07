@@ -1,26 +1,20 @@
 {% extends "index.html" %}
+{% load bootstrap_tags %}
 {% block title %} Contact {% endblock title %}
 {% block content %}
-	<!-- templates/email.html
-	<h1>Contact Us</h1>
-	<form method="post">
-	    {% csrf_token %}
-	    <div class="form-actions">
-	      <button type="submit">Send</button>
-	    </div>
-	</form>-->
+
   <section class="container-fluid row">
     <div class="content col-xs-12 col-lg-8">
       <h5 class="uppercase text-center">If you have any question, please send us a word</h5>
       <div class="center-form">
-        <form>
-          <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
-          <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
-          <input type="text" name="institution" class="form-control" id="institution" placeholder="Institution" required/>
-          <textarea rows="5" name="question" class="form-control" id="question" placeholder="Question" required></textarea>
-          <button type="submit" class="btn btn-secondary center-block">Send Question</button>
+        <form method="post" class="formsModels">
+          {{ contact_form | as_bootstrap }}
+        <{% csrf_token %}
+		<div class="form-group col-md-12">
+			<input class=" btn btn-primary" name="commit" type="submit" value="Submit Question">
+		</div>
         </form>
       </div>
     </div>
-  </section>   <!--  -->
+  </section>
 {% endblock content %}

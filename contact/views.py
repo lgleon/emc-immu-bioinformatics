@@ -16,6 +16,7 @@ def contact(request):
     if request.method == 'POST':
         form = Contact(request.POST)
         if form.is_valid():
+            print("valid contact form")
             form.save()
             return HttpResponseRedirect('/contact/success')
 
@@ -23,5 +24,5 @@ def contact(request):
         form = Contact()
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'contact.html', {'form': form, 'submitted': submitted})
+    return render(request, 'contact.html', {'contact_form': form, 'submitted': submitted})
 
