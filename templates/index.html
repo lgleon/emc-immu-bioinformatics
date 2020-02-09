@@ -42,6 +42,10 @@
 						{% if user.is_authenticated %}
 							<li><a href="/requestform/job_request"> Analysis request</a> </li>
 							<li><a href="/lab/job_status">JobUpdate</a></li>
+							<li><a href="/priority/clients_data"> Clients </a></li>
+							<li><a href="/lab/work" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>
+							<li><a href="/lab/team" data-toggle="collapse" data-target=".navbar-collapse.in">Team</a></li>
+							<li><a href="/contact/contact" data-toggle="collapse" data-target=".navbar-collapse.in">Contact</a></li>
 						{% else %}
 							<li><a href="/priority/clients_data"> Clients </a></li>
 							<li><a href="/lab/work" data-toggle="collapse" data-target=".navbar-collapse.in">Work</a></li>

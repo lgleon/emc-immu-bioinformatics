@@ -111,7 +111,14 @@ There is a paper wireframe, picture included in the folder (readme_info/)
 
 ### Features Left to implement
 
-- A job status for clients, where they can check the job status update using the job id that they got when they submit the analysis.  
+- Priority app was create to give a different priority status to the register clients, for the moment
+priority status is link to the job/analysis, but that will change in the future and it will depends on
+the supervisor and department. Also clients, will help us to control who apply for the analysis
+and if different analysis belongs to the same project and supervisor. User still need to be a client to send a job
+
+- A job status for clients, for the moment clients and users can see the "JobUpdate" tab
+ but they can not enter, only staff members can open it, but in the future the clients will 
+ be able to click on it and see how their submitted job is progressing.   
 
 
 

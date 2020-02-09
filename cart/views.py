@@ -26,4 +26,4 @@ def adjust_cart(request, id):
     cart = Jobs.objects.filter(is_payed=False, usuario=current_user)
     prioirty = Jobs.objects.update( usuario=current_user)
 
-    return redirect(reverse('view_cart',{'cart':cart, 'priority':prioirty}))
+    return redirect(reverse('view_cart', {'cart':cart, 'priority':prioirty}))

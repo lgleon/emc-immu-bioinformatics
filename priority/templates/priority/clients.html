@@ -10,24 +10,16 @@ also to you, security matters, to know who is the owner of the analysis, the <st
 which study is this analysis included <strong>project</strong> and were to find you or your supervisor,
 <strong>department</strong>.
 </p>
-<p class="forms-text"> Thank you for in advance for your cooperation and comprehension.</p>
+
 
 
 {% if submitted %}
 	<p class ="success">
 		You create a new status entry for the job "Job title"
 	</p>
-	<form class="formsModels" method="post" action="{% url 'add_to_cart' product.id %}">
-        {% csrf_token %}
-        <div class="input-group">
-            <input name="quantity" type="number" min="0" max="3" class="form-control" placeholder="Priority Level">
-            <span class="input-group-btn">
-                <button class="btn btn-success" type="submit">Add</button>
-            </span>
-        </div>
-	</form>
-
 {% else %}
+	<p class="center-form"> Dear <strong>{{ user }},</strong> we need few details about you:</p>
+	<form class="formsModels" method="post" novalidate>
 	<form class="formsModels" action="" method="post" novalidate>
 	<table>
 		{{ form }}

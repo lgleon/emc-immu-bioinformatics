@@ -8,9 +8,9 @@ class Clients_data(ModelForm):
     required_css_class = 'required'
     class Meta:
         model = Clients
-        fields = '__all__'
+        fields = ['department', 'supervisor', 'project']
         widgets = {
-            'user': forms.Select(attrs={'class': 'form-control', 'placeholder': 'user name'}),
+            #'user': forms.Select(attrs={'class': 'form-control', 'placeholder': 'user name'}),
             'department': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Department'}),
             'supervisor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Supervisor'}),
             'project': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Project name'}),

@@ -21,8 +21,8 @@ class Jobs(models.Model):
         (NONE, 'none'),
     ]
 
-    job_name = models.CharField('title for the request job', max_length=50)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    job_name = models.CharField('title for this job', max_length=50)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     priority_status = models.CharField(max_length=5, choices=PRIORITY_CHOICES, default=NONE)
     #contact_email = models.EmailField()
 

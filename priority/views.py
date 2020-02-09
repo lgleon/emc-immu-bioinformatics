@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import Clients_data
 from .models import Clients
-
+from django.template import RequestContext
 
 def index(request):
     return HttpResponse("Hello, world. I am in the priority part")
@@ -15,13 +15,14 @@ def client_submited(request):
 @login_required(login_url='/users/login')
 def clients_data(request):
     submitted = False
+    user = request.user
     if request.method == 'POST':
         form = Clients_data(request.POST)
         if form.is_valid():
             form.save()
             print(form.is_valid(), "form is valid")
             cd = form.cleaned_data
-            return HttpResponseRedirect('/priority/client_submited')
+            return HttpResponseRedirect('/priority/client_submited', {'user':user}, context_instance = RequestContext(request))
     else:
         form = Clients_data()
         if 'submitted' in request.GET:

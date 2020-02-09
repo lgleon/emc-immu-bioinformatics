@@ -21,7 +21,7 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        fields = '__all__'
-        widgets = {
-            'date': forms.SelectDateWidget(attrs={'type': 'date', 'class': 'form-control'}),
-        }
+        fields = [ 'phone_number', 'country', 'town_or_city', 'street_address1', 'postcode', ]
+        #widgets = {
+        #    'date': forms.SelectDateWidget(attrs={'type': 'date', 'class': 'form-control'}),
+        #}

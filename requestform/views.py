@@ -5,6 +5,7 @@ from datetime import datetime
 from .models import Jobs
 from .request import RequestJobs
 import logging
+from django.template import RequestContext
 from django.template import loader
 
 logger = logging.getLogger(__name__)
@@ -58,12 +59,13 @@ def job_request(request):
     logger.warning("This is a warning")
     logger.info("This is just info about what´s going on")
     submitted = False
+    user = request.user
     if request.method == 'POST':
         form = RequestJobs(request.POST)
         if form.is_valid():
             form.save()
             logger.info("The job id %s", form.auto_id)
-            return HttpResponseRedirect('/requestform/job_submited')
+            return HttpResponseRedirect('/requestform/job_submited', {'user': user}, context_instance = RequestContext(request))
 
     else:
         form = RequestJobs()
