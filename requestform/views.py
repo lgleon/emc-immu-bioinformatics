@@ -65,7 +65,7 @@ def job_request(request):
         if form.is_valid():
             form.save()
             logger.info("The job id %s", form.auto_id)
-            return HttpResponseRedirect('/requestform/job_submited', {'user': user}, context_instance = RequestContext(request))
+            return HttpResponseRedirect('/requestform/job_submited', {'user': user})
 
     else:
         form = RequestJobs()

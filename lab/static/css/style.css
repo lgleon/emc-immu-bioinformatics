@@ -231,7 +231,7 @@ button[ type="submit"] {
 /*-------------------------------------------- Style for the success submitted text in clients, request and lab*/
 
 .success-text {
-  padding-top: 3em;
+  padding-top: 10em;
   font-family: "Exo", sans-serif;
   font-weight: 200;
   color: blue;

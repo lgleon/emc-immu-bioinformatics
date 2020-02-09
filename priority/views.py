@@ -22,7 +22,7 @@ def clients_data(request):
             form.save()
             print(form.is_valid(), "form is valid")
             cd = form.cleaned_data
-            return HttpResponseRedirect('/priority/client_submited', {'user':user}, context_instance = RequestContext(request))
+            return HttpResponseRedirect('/priority/client_submited', {'user':user})
     else:
         form = Clients_data()
         if 'submitted' in request.GET:
