@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+/* This style is for the Forms to keep the asterisco in the required fields*/
+/*
+.required label:after {
+    content: "*";
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+*/
+/* This style is for the Forms to keep the asterisco in the required fields*/
+
+/*---------------------------navigation------------------------------*/
+
+.navbar {
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  padding-left: 1em;
+}
+
+.navbar-inverse {
+  background-color: #e5e5e5;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #fafafa;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #e5e5e5;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #0000ff;
+}
+
+.navbar-inverse .navbar-brand {
+  color: rgba(0, 0, 255, 1);
+  font-family: "Exo", sans-serif;
+  letter-spacing: normal;
+}
+
+.navbar-brand {
+  font-size: 12px;
+
+}
+
+.navbar-brand:hover {
+  color: #0000ff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: blue;
+}
+
+/* headers */
+h2:first-of-type {
+  margin-top: 0 !important;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/*--------------------------------------------Section Index intro*/
+
+p {
+  padding-bottom: 1em;
+}
+
+
+img {
+  width: 100%;
+}
+
+.logo {
+  padding-left: -15px;
+  padding-right: -15px;
+}
+
+.second-statement {
+  padding-top: 7px;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/*--------------------------------------------Footer*/
+footer {
+  font-size: smaller;
+  background-color: #525252;
+  color: #fafafa;
+  min-height: 120px;
+  text-align: center;
+}
+
+.social-links {
+  padding-bottom: 10px;
+}
+
+.social-links li a i {
+  width: 25px;
+  height: 32px;
+  font-size: 13px;
+  line-height: 7px;
+  text-align: center;
+  color: #fafafa;
+  transition: all 0.20s ease-in-out;
+  -moz-transition: all 0.20s ease-in-out;
+  -webkit-transition: all 0.20s ease-in-out;
+  -o-transition: all 0.20s ease-in-out;
+}
+
+.social-links li a i:hover {
+  background: #0000ff;
+  padding: 12px 0;
+  border-radius: 50%;
+}
+
+#footer-details {
+  margin: 20px;
+}
+
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.footer-middle {
+  text-align: center;
+}
+
+/*--------------------------------------------Contact*/
+
+.contact-heading {
+  font-family: "Exo", sans-serif;
+  font-weight: 300;
+  color: blue;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.text-center{
+  margin-top: 3em;
+  font-size: 20px;
+  color: blue;
+}
+
+.center-form {
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 70%;
+}
+
+button[ type="submit"] {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  background-color: #d3d3d3;
+  color: #0000ff;
+}
+
+
+
+/*-------------------------------------------- The forms clients, request and lab*/
+
+.forms-text {
+  padding-top: 3em;
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+
+.required {
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 70%;
+}
+
+.formsModels {
+  padding-top: 3em;
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+
+/*-------------------------------------------- Style for the success submitted text in clients, request and lab*/
+
+.success-text {
+  padding-top: 3em;
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+
+
+/*-------------------------------------------- Log out and when errors in log in*/
+
+.log-part {
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  padding-top: 3em;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+/*-------------------------------------------- Log in and register forms*/
+.user-log {
+  font-family: "Exo", sans-serif;
+  font-weight: 200;
+  color: blue;
+  padding-top: 3em;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+
+/*--------------------------------------------Team*/
+
+.content-team {
+  margin-top: 15%;
+  margin-bottom: 5em;
+}
+
+.team .photo {
+  float: left;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+img {
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.more-info-team {
+  margin-top: 5em;
+}
+
+.bio {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  margin-top: 2px;
+}
+
+/*--------------------------------------------Projects_all of them*/
+
+
+.container-fluid {
+  margin-top: 5em;
+}
+
+input[type=button] {
+  position: center;
+  background-color: #d3d3d3;
+  color: #0000ff;
+  margin-left: 40%;
+  margin-top: 3em;
+}
+
+/*--------------------------------------------Project1*/
+
+
+.figure1_1 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+img {
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.figure1_2 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+/*--------------------------------------------Project2*/
+
+
+.figure2_1 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+img {
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.figure2_2 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+/*--------------------------------------------Project3*/
+
+
+.figure3_1 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+img {
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.figure3_2 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+
+/*---------------------------------------------Project 4 */
+
+
+.figure4_1 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+img {
+  margin: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.figure4_2 {
+  display: block;
+  margin-bottom: 2px;
+  margin-right: 50px;
+  max-width: 100%;
+}
+
+
+/*--------------------------------------------Media Query*/
+
+@media (min-width: 768px) {
+
+  .content {
+    margin-top: 50px;
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 24px;
+    margin: 10px 10px 10px 10px;
+    text-align: justify;
+  }
+
+  .logo {
+    min-height: 360px;
+  }
+
+  .home-info {
+    padding-left: 12px;
+  }
+
+  .second-statement {
+    margin-bottom: 3%;
+    padding-left: 12px;
+  }
+
+  .footer {
+    min-height: 160px;
+    max-width: 100%;
+  }
+
+  .team .photo {
+    max-width: 160px;
+    margin-top: 5em;
+
+  }
+
+  .name {
+    font-size: 24px;
+    margin-top: 2em;
+  }
+
+  h2:first-of-type {
+    margin-top: 2em !important;
+  }
+  h2 {
+    font-size: 25px;
+  }
+
+  .form-control {
+    font-size: 24px;
+    height: auto;
+    margin-top: 1em;
+  }
+
+  .btn {
+    font-size: 24px;
+  }
+
+  .text-center {
+    font-size: 28px;
+    margin-top: 5em;
+  }
+
+  .social-links li a i {
+    width: 50px;
+    height: 60px;
+    font-size: 18px;
+    line-height: 14px;
+  }
+    .container {
+    width: auto;
+  }
+  h4{
+    padding-top: 1em;
+  }
+
+}
+
+
+@media (min-width: 922px) {
+
+  /*body {
+    margin: 0 15% 0 15%;
+  }
+*/
+  .container {
+    width: auto;
+  }
+  .row {
+    ;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+}
+
+
+
