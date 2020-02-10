@@ -63,8 +63,9 @@ def job_request(request):
     if request.method == 'POST':
         form = RequestJobs(request.POST)
         if form.is_valid():
-            form.save()
-            logger.info("The job id %s", form.auto_id)
+            job = form.save(commit=False)
+            job.usuario = request.user
+            job.save()
             return HttpResponseRedirect('/requestform/job_submited', {'user': user})
 
     else:

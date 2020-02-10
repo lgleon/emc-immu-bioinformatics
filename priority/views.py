@@ -19,9 +19,9 @@ def clients_data(request):
     if request.method == 'POST':
         form = Clients_data(request.POST)
         if form.is_valid():
-            form.save()
-            print(form.is_valid(), "form is valid")
-            cd = form.cleaned_data
+            job = form.save(commit=False)
+            job.user = request.user
+            job.save()
             return HttpResponseRedirect('/priority/client_submited', {'user':user})
     else:
         form = Clients_data()

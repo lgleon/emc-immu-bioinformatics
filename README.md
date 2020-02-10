@@ -15,7 +15,6 @@ EMC Bioinformatic Immunology Lab
 Django framework and uses sql3 for the database. It also uses the Bootstrap framework on the front-end.
 That application was built for fourth Milestone Project at Code Institute.
 The live project can be viewed [here](https://lety-emcbioinfo.herokuapp.com/).
-
 </div>
 
 
@@ -58,21 +57,21 @@ This application is built with a mobile first, responsive design in mind.
 
 - As a register user who wishes to collaborate with us or ask for a bioinformatic analysis (authentication is required for this part), I should:
     - see a form allowing me to register as a client:
-        - Using the user name, frecquently a student, register a Supervisor (PI) as client.
+        - Using the user name, frequently a student, register a Supervisor (PI) as client.
         - specified a Department in case is not Immunology
         - Add a project with some specifications
     - see a submit button to send the form
-    - got a sucessfully submited messague with user and supervisor names
+    - got a successfully submitted message with user and supervisor names
     - see a log out tab
 
-- As a user who is resgister/accepted as client (authentication is required for this part), I should see a link to "Request analysis" where I can see a form:
-    - All fields are required to have an idea reagarding the type of analysis to perform and the study and project realted with.
+- As a user who is register/accepted as client (authentication is required for this part), I should see a link to "Request analysis" where I can see a form:
+    - All fields are required to have an idea regarding the type of analysis to perform and the study and project realted with.
     - see a submit button to send the form
-    - got a sucessfully submited messague with job id and priority status that they will pay for
+    - got a successfully submitted message with job id and priority status that they will pay for
 
 - As a user who is part of our bioinformatic team (authentication is required for this part), I should:
     - see a form to update the status of the job I am working in
-    - got a sucessfully update messague with job name 
+    - got a successfully update message with job name 
     - see a log out tab
 
 - A a user who just request a bioinformatic analysis I should:
@@ -89,8 +88,8 @@ The design of this website is completely original and base in the personal need 
  
  ### Wireframes
 
-There are no computer, mobile or any digital wireframes or mockups. 
-There is a paper wireframe, picture included in the folder (readme_info/)
+There are no computer, mobile or any digital wire-frames or mockups. 
+There is a paper wire-frame, picture included in the folder (readme_info/)
 
 
 
@@ -105,7 +104,7 @@ There is a paper wireframe, picture included in the folder (readme_info/)
 
 - The feature for **Client** will be available for users who are logged in and can apply to register as clients using his supervisor name is accessed by 'clients' tab in the navbar right-hand corner. This will take the user to a half page form that will allow them to submit detailed information about the department, project and supervisor of the project.
 
-- The feature for **JobStatus update** will be available for users who are logged in as Team members of the Lab and have Staff priviles is accessed by 'Job sttus' tab in the navbar right-hand corner. This will take the user to a half page form that will allow them to fillup a short form to keep a record of the analysis that they are working on and submit that info to the DB.
+- The feature for **JobStatus update** will be available for users who are logged in as Team members of the Lab and have Staff privileges is accessed by 'Job status' tab in the navbar right-hand corner. This will take the user to a half page form that will allow them to fill-up a short form to keep a record of the analysis that they are working on and submit that info to the DB.
 
 - The feature for **Contact** will be available for all users is accessed by the 'contact' tab in the navbar right-hand corner. This will take the user to a short form that they can use if they have any question or they want to ask anything regarding an specific analysis.
 
@@ -117,16 +116,16 @@ the supervisor and department. Also clients, will help us to control who apply f
 and if different analysis belongs to the same project and supervisor. User still need to be a client to send a job
 
 - A job status for clients, for the moment clients and users can see the "JobUpdate" tab
- but they can not enter, only staff members can open it, but in the future the clients will 
+ but they cannot enter, only staff members can open it, but in the future the clients will 
  be able to click on it and see how their submitted job is progressing.   
 
 
 
 ### Challenges
 
-- Learning how to work with Dajngo Framework was a great learning experience. It was chalelnging to learn to with with separate app for the different parts of the website. Also how to trust in Django features for user authentication.
+- Learning how to work with Dajngo Framework was a great learning experience. It was challenging to learn to with with separate app for the different parts of the website. Also how to trust in Django features for user authentication.
 
-- Wairing the forms, models and htlms in each app and then to the project using the URLconfig.
+- Wiring the forms, models and HTMLs in each app and then to the project using the URLconfig.
 
 - Integrate the old static html that I previously created for my Lab to the new backend functionality.
 
@@ -143,7 +142,7 @@ Languages, frameworks, libraries, and any other tools used to construct this pro
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
     - **CSS3** Cascading Style Sheets.
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-    - **Javasript** is a high-level, interpreted programming language.
+    - **Javascript** is a high-level, interpreted programming language.
 - [PyCharm](https://www.jetbrains.com/pycharm/)
     - **PyCharm** Is the IDE used to develop the website.
 - [GitHub](https://github.com/)
@@ -173,7 +172,7 @@ Languages, frameworks, libraries, and any other tools used to construct this pro
 
 ## Testing
 
-- the project was continually tested using Travis, checking everytime that it did pass the build test   
+- the project was continually tested using Travis, checking every time that it did pass the build test   
 
 - The project was build using Google Chrome and then later tested in other browsers; FireFox and Safary
 
@@ -216,7 +215,7 @@ This project was then deployed to Heroku to host the live application, following
 
 The live project can be viewed [here](https://lety-emcbioinfo.herokuapp.com/).
 
-## Databse schema:
+## Database schema:
 
 
 
