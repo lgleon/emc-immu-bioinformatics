@@ -30,14 +30,11 @@ def checkout(request):
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
         jobs = Jobs.objects.filter(is_payed=False, usuario=request.user)
-        #print("is the form valid¿")
         if order_form.is_valid() and payment_form.is_valid():
-            #print("it is!")
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.user = request.user
             order.save()
-            #print(type(order))
             total = 0
             for job in jobs:
                 total += 20 + job.get_priority_value()
@@ -48,7 +45,6 @@ def checkout(request):
                 order_line_item.save()
 
             try:
-                print("before charge create")
                 customer = stripe.Charge.create(
                     amount=int(total * 100),
                     currency="EUR",
@@ -56,11 +52,9 @@ def checkout(request):
                     card=payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
-                print("card problem")
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                print("wont see this")
                 messages.error(request, "You have successfully paid")
                 for job in jobs:
                     job.is_payed = True
